@@ -1,4 +1,7 @@
+import 'package:canastaapp/games.dart';
 import 'package:flutter/material.dart';
+import 'package:canastaapp/ayuda.dart';
+import 'package:canastaapp/finished.dart';
 
 
 void main(){
@@ -25,14 +28,19 @@ class Inicio extends StatelessWidget {
         backgroundColor: Colors.green[900],
       ),
       body: Container(
+        /*decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new AssetImage('images/tapete.png'),
+            fit: BoxFit.cover,
+          ),
+        ),*/
         color: Colors.green[600],
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            BotonInicio(context, 'Partidas guardadas'),
-            BotonInicio(context, 'Ayuda'),
-            BotonInicio(context, 'Placeholder'),
-            BotonInicio(context, 'Placeholder2')
+            BotonInicio(context, 'Partidas actuales', 'games.dart'),
+            BotonInicio(context, 'Partidas finalizadas', 'finished.dart'),
+            BotonInicio(context, 'Reglas', 'ayuda.dart'),
           ],
         )
       )
@@ -40,7 +48,7 @@ class Inicio extends StatelessWidget {
   }
 }
 
-Widget BotonInicio(BuildContext context, String text){
+Widget BotonInicio(BuildContext context, String text, String route){
   return Container(
     margin: const EdgeInsets.all(10.0),
     color: Colors.red[500],
@@ -55,12 +63,30 @@ Widget BotonInicio(BuildContext context, String text){
           color: Colors.black
         ),
       ),
-      /*onPressed: (){//Al pulsar
-        return Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => GameLaunch(mode)),
-        );
-      },*/
+      onPressed: (){
+        if(route == 'ayuda.dart'){
+          return Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Help()),
+          );
+        }else if(route == 'games.dart'){
+          return Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CurrentGames()),
+          );
+        }else{
+          return Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => FinishedGames()),
+          );
+        }
+      }
     )
   );
 }
+/*
+* return Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => GameLaunch(mode)),
+        );
+* */
