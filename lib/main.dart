@@ -28,17 +28,17 @@ class Inicio extends StatelessWidget {
         backgroundColor: Colors.green[900],
       ),
       body: Container(
-        /*decoration: new BoxDecoration(
+        decoration: new BoxDecoration(
           image: new DecorationImage(
-            image: new AssetImage('images/tapete.png'),
+            image: new AssetImage('./images/tapete.png'),
             fit: BoxFit.cover,
           ),
-        ),*/
-        color: Colors.green[600],
+        ),
+        //color: Colors.green[600],
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            BotonInicio(context, 'Partidas actuales', 'games.dart'),
+            BotonInicio(context, 'Partidas   actuales', 'games.dart'),
             BotonInicio(context, 'Partidas finalizadas', 'finished.dart'),
             BotonInicio(context, 'Reglas', 'ayuda.dart'),
           ],
@@ -57,7 +57,9 @@ Widget BotonInicio(BuildContext context, String text, String route){
     child: OutlineButton(
       child: Text(
         text,
+        textAlign: TextAlign.center,
         style: TextStyle(
+          fontFamily: 'Poker',
           fontWeight: FontWeight.bold,
           fontSize: 30,
           color: Colors.black
