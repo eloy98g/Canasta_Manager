@@ -9,6 +9,7 @@ A flutter application to manage the Canasta&#x27;s cards game
     -Guardar partidas diferentes
     -Estadisticas contra jugadores
     -añadir calculadora -> SlidingUpPanel
+    -reglas diferntes dificultades
 
 ### Recordatorios
 
