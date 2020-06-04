@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
+//import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class Help extends StatelessWidget {
 
@@ -7,9 +7,21 @@ class Help extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Reglas'),
+        title:
+          Text(
+            'Reglas',
+            style: TextStyle(
+              fontFamily: 'Poker',
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.black
+            ),
+          ),
         centerTitle: true,
         backgroundColor: Colors.green[900],
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
+        ),
       ),
       body: Container(
         decoration: new BoxDecoration(
@@ -24,16 +36,6 @@ class Help extends StatelessWidget {
           margin: EdgeInsets.all(8.0),
           child: ListView(
             children: <Widget>[
-              Text(
-                'REGLAS',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontFamily: 'Poker',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Colors.black
-                ),
-              ),
               Text('cada 3 negro que quede en la mano de un jugador vale 100 puntos en contra (negativos).'),
               Text('http://www.casinodeagricultura.com/es/fichaNoticia/la-canasta-reglamento'),
             ],

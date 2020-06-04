@@ -22,11 +22,23 @@ class Inicio extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Canasta Manager'),
+      /*appBar: AppBar(
+        title:
+          Text(
+            'Canasta Manager',
+            style: TextStyle(
+              fontFamily: 'Poker',
+              //fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.white
+            ),
+          ),
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
+        ),
         centerTitle: true,
         backgroundColor: Colors.green[900],
-      ),
+      ),*/
       body: Container(
         decoration: new BoxDecoration(
           image: new DecorationImage(
@@ -63,7 +75,7 @@ Widget BotonInicio(BuildContext context, String text, String route){
         BoxShadow(
           color: Colors.black.withOpacity(0.5),
           spreadRadius: 2,
-          blurRadius: 3,
+          blurRadius: 2,
           offset: Offset(0, 3), // changes position of shadow
         ),
       ],
