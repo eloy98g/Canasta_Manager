@@ -51,9 +51,23 @@ class Inicio extends StatelessWidget {
 Widget BotonInicio(BuildContext context, String text, String route){
   return Container(
     margin: const EdgeInsets.all(10.0),
-    color: Colors.red[500],
+    //color: Colors.red[500],
     width: 400.0,
     height: 100.0,
+    decoration: new BoxDecoration(
+      image: new DecorationImage(
+        image: new AssetImage('./images/redcard.jpg'),
+        fit: BoxFit.cover,
+      ),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.5),
+          spreadRadius: 2,
+          blurRadius: 3,
+          offset: Offset(0, 3), // changes position of shadow
+        ),
+      ],
+    ),
     child: OutlineButton(
       child: Text(
         text,
